@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Petals around the rose</title>
+	<link rel="shortcut icon" href="/media/work/WWW/wwwicon.ico">
+</head>
+
+<body>
+
+<script>
+var roses = new Array(), res=0;
+roses[0] = "&nbsp&nbsp&nbsp&nbsp&nbsp<br>&nbsp&nbsp*&nbsp&nbsp<br>&nbsp&nbsp&nbsp&nbsp&nbsp";
+roses[1] = "*&nbsp&nbsp&nbsp&nbsp<br>&nbsp&nbsp&nbsp&nbsp&nbsp<br>&nbsp&nbsp&nbsp&nbsp*";
+roses[2] = "*&nbsp&nbsp&nbsp&nbsp<br>&nbsp&nbsp*&nbsp&nbsp<br>&nbsp&nbsp&nbsp&nbsp*";
+roses[3] = "*&nbsp&nbsp&nbsp*<br>&nbsp&nbsp&nbsp&nbsp&nbsp<br>*&nbsp&nbsp&nbsp*";
+roses[4] = "*&nbsp&nbsp&nbsp*<br>&nbsp&nbsp*&nbsp&nbsp<br>*&nbsp&nbsp&nbsp*";
+roses[5] = "*&nbsp&nbsp&nbsp*<br>*&nbsp&nbsp&nbsp*<br>*&nbsp&nbsp&nbsp*";
+
+function Generate()
+{
+	res = 0;
+	document.getElementById("res").innerHTML = "";
+	for(var i=0;i<roses.length;i++){
+		var cur = Math.round(Math.random()*5);
+		document.getElementById("rose"+(i+1)).innerHTML = roses[cur];
+		switch(cur){
+			case 0:
+			res+=0;
+			break;
+			case 1:
+			res+=0;
+			break;
+			case 2:
+			res+=2;
+			break;
+			case 3:
+			res+=0;
+			break;
+			case 4:
+			res+=4;
+			break;
+			case 5:
+			res+=0;
+			break;
+		}
+	}
+	
+	document.getElementById("check").disabled = false;
+	document.getElementById("gener").disabled = true;
+}
+
+function Check(){
+	var answ = document.getElementById("answ").value;
+	if (answ==res){
+		document.getElementById("res").innerHTML = "You are right :)";
+	}else{
+		document.getElementById("res").innerHTML = "Wrong!:(<br>Right answer is "+res;
+	}
+
+	document.getElementById("check").disabled = true;
+	document.getElementById("gener").disabled = false;
+}
+</script>
+
+
+<table border="1"> 
+	<tr>
+		<td>
+			<p id="rose1"></p>
+		</td>
+		<td>
+			<p id="rose2"></p>
+		</td>
+		<td>
+			<p id="rose3"></p>
+		</td>
+		<td>
+			<p id="rose4"></p>
+		</td>
+		<td>
+			<p id="rose5"></p>
+		</td>
+		<td>
+			<p id="rose6"></p>
+		</td>
+	</tr>
+</table>
+
+<input id="answ" type="text" size="5">
+<button id="check" type="button" onclick="Check()" disabled>Check</button>
+<button id="gener" type="button" onclick="Generate()" >Generate</button>
+
+<p id="res"></p>
+
+<script>
+	Generate();
+</script>
+
+</body>
+</html> 
