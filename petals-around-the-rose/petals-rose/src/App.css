@@ -40,8 +40,18 @@
 
 div.facet {
 	float: inherit;
+	border-color: black;
+	border: 1px;
+	border-style: solid;
 }
 
 div.row {
-	margin: 10px;
+
+}
+
+div.cell {
+	padding: 10px;
+	float: left;
+	min-width: 30px;
+	min-height: 30px;
 }

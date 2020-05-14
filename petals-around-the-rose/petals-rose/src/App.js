@@ -32,19 +32,19 @@ class Facet extends React.Component{
 		return (
 			<div className='facet' value={this.props.value}>
 				<div className="row rowTop">
-					<span>{this.state.roses[this.props.value-1][0]}</span>
-					<span>{this.state.roses[this.props.value-1][1]}</span>
-					<span>{this.state.roses[this.props.value-1][2]}</span>
+					<div className="cell">{this.state.roses[this.props.value-1][0]}</div>
+					<div className="cell">{this.state.roses[this.props.value-1][1]}</div>
+					<div className="cell">{this.state.roses[this.props.value-1][2]}</div>
 				</div>
 				<div className="row rowMiddle">
-					<span>{this.state.roses[this.props.value-1][3]}</span>
-					<span>{this.state.roses[this.props.value-1][4]}</span>
-					<span>{this.state.roses[this.props.value-1][5]}</span>
+					<div className="cell">{this.state.roses[this.props.value-1][3]}</div>
+					<div className="cell">{this.state.roses[this.props.value-1][4]}</div>
+					<div className="cell">{this.state.roses[this.props.value-1][5]}</div>
 				</div>
 				<div className="row rowBottom">
-					<span>{this.state.roses[this.props.value-1][6]}</span>
-					<span>{this.state.roses[this.props.value-1][7]}</span>
-					<span>{this.state.roses[this.props.value-1][8]}</span>
+					<div className="cell">{this.state.roses[this.props.value-1][6]}</div>
+					<div className="cell">{this.state.roses[this.props.value-1][7]}</div>
+					<div className="cell">{this.state.roses[this.props.value-1][8]}</div>
 				</div>
 			</div>
 		);
