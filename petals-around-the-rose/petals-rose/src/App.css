@@ -1,6 +1,11 @@
 .App {
-  text-align: center;
-  float: left;
+	text-align: center;
+	float: left;
+	margin: 10px;
+	border-color: black;
+	border: 1px;
+	border-style: solid;
+	border-right: none;
 }
 
 .App-logo {
@@ -40,9 +45,9 @@
 
 div.facet {
 	float: inherit;
-	border-color: black;
-	border: 1px;
-	border-style: solid;
+	border-right-color: black;
+	border-right: 1px;
+	border-right-style: solid;
 }
 
 div.row {
