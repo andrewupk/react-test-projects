@@ -4,6 +4,27 @@ import './App.css';
 
 function App() {	
 	const values = Array(6).fill().map(() => Math.round(Math.random() * 5+1));
+	let res = 0;
+	for (const value of values){
+		switch(value){
+			case 1:
+			case 2:
+			case 4:
+			case 6:
+				res+=0;
+				break;
+			case 3:
+				res+=2;
+				break;
+			break;
+				case 5:
+				res+=4;
+			break;
+		}
+	}
+	
+	console.log(res); 
+	
 	const roses = [[' ',' ',' ',' ','*',' ',' ',' ',' '],	//1
 					 ['*',' ',' ',' ',' ',' ',' ',' ','*'],	//2
 					 ['*',' ',' ',' ','*',' ',' ',' ','*'],	//3
