@@ -2,7 +2,7 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 
-function App() {	
+/*function App() {	
 	const values = Array(6).fill().map(() => Math.round(Math.random() * 5+1));
 	let res = 0;
 	for (const value of values){
@@ -23,8 +23,6 @@ function App() {
 		}
 	}
 	
-	console.log(res); 
-	
 	const roses = [[' ',' ',' ',' ','*',' ',' ',' ',' '],	//1
 					 ['*',' ',' ',' ',' ',' ',' ',' ','*'],	//2
 					 ['*',' ',' ',' ','*',' ',' ',' ','*'],	//3
@@ -32,14 +30,81 @@ function App() {
 					 ['*',' ','*',' ','*',' ','*',' ','*'],	//5
 					 ['*',' ','*','*',' ','*','*',' ','*']]	//6
 	const facets = values.map((val, i) => {
-		return <Facet value={val} key={i} rose={roses[val-1]}/>
+		return <Facet value={val} key={i} rose={roses[val-1]}/>;
 	});
 
 	return (
 		<div className="App">
-			{facets}
+			<div className="generator">
+				<button>Generate</button>
+			</div>
+			<div className="facetsContainer">
+				{facets}
+			</div>
 		</div>
 	);
+}*/
+
+class App extends React.Component {
+	constructor(props){
+		super(props);
+		this.state = {
+			values: Array(6).fill().map(() => Math.round(Math.random() * 5+1))
+		};
+		
+		this.roses = [[' ',' ',' ',' ','*',' ',' ',' ',' '],	//1
+						 ['*',' ',' ',' ',' ',' ',' ',' ','*'],	//2
+						 ['*',' ',' ',' ','*',' ',' ',' ','*'],	//3
+						 ['*',' ','*',' ',' ',' ','*',' ','*'],	//4
+						 ['*',' ','*',' ','*',' ','*',' ','*'],	//5
+						 ['*',' ','*','*',' ','*','*',' ','*']]	//6
+		this.calculateResult = this.calculateResult.bind(this);
+		this.generateFacets = this.generateFacets.bind(this);
+	}
+	
+	calculateResult(){
+		let res = 0;
+		for (const value of this.state.values){
+			switch(value){
+				case 1:
+				case 2:
+				case 4:
+				case 6:
+					res+=0;
+					break;
+				case 3:
+					res+=2;
+					break;
+				break;
+					case 5:
+					res+=4;
+				break;
+			}
+		}
+		return res;
+	}
+	
+	generateFacets(){
+		this.setState({
+			values: Array(6).fill().map(() => Math.round(Math.random() * 5+1))
+		});
+	}
+	
+	render(){
+		const facets = this.state.values.map((val, i) => {
+			return <Facet value={val} key={i} rose={this.roses[val-1]}/>;
+		});
+		return (
+			<div className="App">
+				<div className="generator">
+					<button onClick={this.generateFacets}>Generate</button>
+				</div>
+				<div className="facetsContainer">
+					{facets}
+				</div>
+			</div>
+		);
+	}
 }
 
 class Facet extends React.Component{

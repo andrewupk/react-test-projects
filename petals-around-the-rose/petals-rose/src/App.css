@@ -1,11 +1,6 @@
 .App {
 	text-align: center;
-	float: left;
 	margin: 10px;
-	border-color: black;
-	border: 1px;
-	border-style: solid;
-	border-right: none;
 }
 
 .App-logo {
@@ -43,6 +38,14 @@
   }
 }
 
+div.facetsContainer {
+	float: left;
+	border-color: black;
+	border: 1px;
+	border-style: solid;
+	border-right: none;
+}
+
 div.facet {
 	float: inherit;
 	border-right-color: black;
@@ -50,8 +53,9 @@ div.facet {
 	border-right-style: solid;
 }
 
-div.row {
-
+div.generator {
+	padding: 10px;
+	text-align: left;
 }
 
 div.cell {
