@@ -9,23 +9,12 @@ class TestLayout extends React.Component{
 					<button>Generate</button>
 				</div>
 				<div className="facetsContainer">
-					<div className="facet">
-						<div className="row rowTop">
-							<div className="cell">*</div>
-							<div className="cell">*</div>
-							<div className="cell">*</div>
-						</div>
-						<div className="row rowMiddle">
-							<div className="cell">*</div>
-							<div className="cell">*</div>
-							<div className="cell">*</div>
-						</div>
-						<div className="row rowBottom">
-							<div className="cell">*</div>
-							<div className="cell">*</div>
-							<div className="cell">*</div>
-						</div>
-					</div>
+					<Facet/>
+					<Facet/>
+					<Facet/>
+					<Facet/>
+					<Facet/>
+					<Facet/>
 				</div>
 				<div className="result">
 					<input type="text"/>
@@ -36,5 +25,28 @@ class TestLayout extends React.Component{
 	}
 }
 
+class Facet extends React.Component{
+	render(){
+		return (
+			<div className='facet'>
+				<div className="row rowTop">
+					<div className="cell">*</div>
+					<div className="cell">*</div>
+					<div className="cell">*</div>
+				</div>
+				<div className="row rowMiddle">
+					<div className="cell">*</div>
+					<div className="cell">*</div>
+					<div className="cell">*</div>
+				</div>
+				<div className="row rowBottom">
+					<div className="cell">*</div>
+					<div className="cell">*</div>
+					<div className="cell">*</div>
+				</div>
+			</div>
+		);
+	}
+}
 
 export default TestLayout;

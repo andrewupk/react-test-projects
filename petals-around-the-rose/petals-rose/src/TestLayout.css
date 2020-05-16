@@ -1,5 +1,5 @@
 .App {
-
+	margin: 10px;
 }
 
 .App-logo {
@@ -35,4 +35,26 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+div.facetsContainer {
+	margin: 10px 0px 10px 0px;
+}
+
+div.facet {
+	display: inline-grid;
+	border: solid 1px;
+	border-right: none;
+}
+
+div.facet:last-of-type {
+	border-right: solid 1px;
+}
+
+div.row {
+	display: inline-flex;
+}
+
+div.cell {
+	padding: 15px 22px;
 }
