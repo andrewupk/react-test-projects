@@ -62,3 +62,17 @@ div.cell {
 div.cell.hidden {
 	visibility: hidden;
 }
+
+div.rightResult {
+	padding: 10px 0px 10px 10px;
+    background-color: lightgreen;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+div.wrongResult {
+	padding: 10px 0px 10px 10px;
+    background-color: lightcoral;
+    margin-top: 10px;
+    font-weight: bold;
+}

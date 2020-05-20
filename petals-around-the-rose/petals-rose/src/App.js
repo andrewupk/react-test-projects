@@ -38,15 +38,23 @@ class App extends React.Component {
 	
 	generateFacets(){
 		this.setState({
-			values: Array(6).fill().map(() => Math.round(Math.random() * 5+1))
+			values: Array(6).fill().map(() => Math.round(Math.random() * 5+1)),
+			rightResult: false,
+			wrongResult: false
 		});
 	}
 	
 	checkAnswer(ans){
 		if (+ans === this.calculateResult()){
-			console.log('You are right :)');
+			this.setState({
+				rightResult: true,
+				wrongResult: false
+			});
 		} else {
-			console.log('You are wrong :(');
+			this.setState({
+				rightResult: false,
+				wrongResult: true
+			});
 		}
 	}
 	
@@ -56,6 +64,8 @@ class App extends React.Component {
 				<Generator generate={this.generateFacets}/>
 				<Dice values={this.state.values}/>
 				<Checker check={this.checkAnswer}/>
+				{this.state.rightResult && <RightResult />}
+				{this.state.wrongResult && <WrongResult rightAnswer={this.calculateResult()}/>}
 			</div>
 		);
 	}
@@ -141,9 +151,29 @@ class Checker extends React.Component {
 	render(){
 		const answer = this.state.answer;
 		return (
-			<div className="result">
+			<div className="checker">
 				<input type="number" value={answer} onChange={this.handleChange}/>
 				<button onClick={this.checkAnswer}>Check</button>
+			</div>
+		);
+	}
+}
+
+class RightResult extends React.Component{
+	render(){
+		return (
+			<div className="rightResult">
+				You are right!
+			</div>
+		);
+	}
+}
+
+class WrongResult extends React.Component{
+	render(){
+		return (
+			<div className="wrongResult">
+				You are wrong! Right answer is {this.props.rightAnswer}
 			</div>
 		);
 	}
